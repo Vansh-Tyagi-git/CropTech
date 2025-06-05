@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Selection - CropTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="crop-selection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="CropTech Logo">
+            <h1>CropTech</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn active">Technology <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="crop-monitoring.html">AI Crop Monitoring</a>
+                        <a href="crop-selection.html" class="active">AI Crop Selection</a>
+                        <a href="climate-prediction.html">AI Climate Prediction</a>
+                        <a href="market-prediction.html">AI Market Prediction</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta-button">
+            <a href="contact.html" class="btn">Contact Us →</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Technology Hero Section -->
+    <section class="tech-hero">
+        <div class="tech-hero-content">
+            <h1>AI Crop Selection</h1>
+            <p>Optimize your farm's productivity with data-driven crop selection</p>
+        </div>
+    </section>
+
+    <!-- Technology Overview -->
+    <section class="tech-overview">
+        <div class="container">
+            <div class="tech-overview-content">
+                <div class="tech-overview-text">
+                    <h2>Smart Crop Selection for Maximum Yield</h2>
+                    <p>Our AI-powered crop selection system analyzes your farm's specific conditions and recommends the most suitable crops for optimal growth and yield. By considering factors such as soil composition, climate patterns, water availability, and market demand, our system helps you make informed decisions that maximize your farm's productivity and profitability.</p>
+                    <div class="tech-features">
+                        <div class="tech-feature">
+                            <i class="fas fa-seedling"></i>
+                            <h3>Crop Recommendations</h3>
+                            <p>Get personalized crop recommendations based on your specific farm conditions</p>
+                        </div>
+                        <div class="tech-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Yield Predictions</h3>
+                            <p>Forecast potential yields for different crop varieties before planting</p>
+                        </div>
+                        <div class="tech-feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Planting Schedules</h3>
+                            <p>Optimize planting and harvesting times based on climate data</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-overview-image">
+                    <img src="images/Ai-Crop-Selection.jpeg" alt="AI Crop Selection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Selection Tool -->
+    <section class="crop-selection-tool">
+        <div class="container">
+            <div class="section-header">
+                <h2>INTERACTIVE TOOL</h2>
+                <h1>Find Your Ideal Crops</h1>
+            </div>
+            <div class="tool-container">
+                <div class="tool-sidebar">
+                    <h3>Enter Your Farm Details</h3>
+                    <form id="crop-selection-form">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <div class="input-with-icon">
+                                <input type="text" id="location" name="location" placeholder="Enter your location" value="Dwarka">
+                                <button type="button" class="location-btn" id="use-default-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Location Presets -->
+                        <div class="location-presets">
+                            <button type="button" class="preset-btn" data-preset="delhi">Delhi</button>
+                            <button type="button" class="preset-btn" data-preset="punjab">Punjab</button>
+                            <button type="button" class="preset-btn" data-preset="kerala">Kerala</button>
+                            <button type="button" class="preset-btn" data-preset="gujarat">Gujarat</button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="soil-type">Soil Type</label>
+                            <select id="soil-type" name="soil-type">
+                                <option value="">Select soil type</option>
+                                <option value="clay">Clay</option>
+                                <option value="sandy">Sandy</option>
+                                <option value="loamy" selected>Loamy</option>
+                                <option value="silty">Silty</option>
+                                <option value="peaty">Peaty</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Basic Parameters -->
+                        <div class="tool-section">
+                            <h3>Basic Parameters</h3>
+                            
+                            <div class="form-group">
+                                <label for="ph-level">Soil pH Level</label>
+                                <div class="range-slider">
+                                    <input type="range" id="ph-level" name="ph-level" min="5.5" max="8.5" step="0.1" value="7.25">
+                                    <div class="range-value"><span id="ph-value">7.3</span></div>
+                                    <div class="range-labels">
+                                        <span>5.5 (Acidic)</span>
+                                        <span>8.5 (Alkaline)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="temperature">Average Temperature (°C)</label>
+                                <div class="range-slider">
+                                    <input type="range" id="temperature" name="temperature" min="8" max="40" step="0.1" value="28">
+                                    <div class="range-value"><span id="temp-value">28.0</span></div>
+                                    <div class="range-labels">
+                                        <span>8°C</span>
+                                        <span>40.6°C</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rainfall">Annual Rainfall (mm)</label>
+                                <div class="range-slider">
+                                    <input type="range" id="rainfall" name="rainfall" min="500" max="2000" step="10" value="700">
+                                    <div class="range-value"><span id="rainfall-value">700</span></div>
+                                    <div class="range-labels">
+                                        <span>500 mm</span>
+                                        <span>2000 mm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Parameters -->
+                        <div class="tool-section">
+                            <h3>Advanced Parameters</h3>
+                            <div class="form-group">
+                                <label for="nitrogen">Nitrogen (kg/ha)</label>
+                                <input type="number" id="nitrogen" name="nitrogen" value="310" min="0" max="500">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phosphorus">Phosphorus (kg/ha)</label>
+                                <input type="number" id="phosphorus" name="phosphorus" value="14" min="0" max="300">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="potassium">Potassium (kg/ha)</label>
+                                <input type="number" id="potassium" name="potassium" value="165" min="0" max="300">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="humidity">Humidity (%)</label>
+                                <div class="range-slider">
+                                    <input type="range" id="humidity" name="humidity" min="44" max="76" step="1" value="60">
+                                    <div class="range-value"><span id="humidity-value">60</span></div>
+                                    <div class="range-labels">
+                                        <span>44%</span>
+                                        <span>76%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="farm-size">Farm Size (acres)</label>
+                                <input type="number" id="farm-size" name="farm-size" placeholder="Enter farm size" value="10">
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Crop Selection Buttons -->
+                        <div class="tool-section">
+                            <h3>Quick Crop Selection</h3>
+                            <div class="quick-crop-buttons">
+                                <button type="button" class="quick-crop-btn" data-crop="rice">Rice</button>
+                                <button type="button" class="quick-crop-btn" data-crop="wheat">Wheat</button>
+                                <button type="button" class="quick-crop-btn" data-crop="maize">Maize</button>
+                                <button type="button" class="quick-crop-btn" data-crop="cotton">Cotton</button>
+                                <button type="button" class="quick-crop-btn" data-crop="chickpea">Chickpea</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-tool">Find Suitable Crops</button>
+                            <button type="button" id="reset-form" class="btn btn-outline">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="tool-results">
+                    <h3>Recommended Crops for <span id="location-display">Default Location</span></h3>
+                    <div id="crop-results" class="crop-results">
+                        <div class="placeholder-message">
+                            <i class="fas fa-leaf"></i>
+                            <p>Enter your farm details to see recommended crops</p>
+                        </div>
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                    <div id="crop-details" class="crop-details">
+                        <!-- Detailed crop information will be shown here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Factors -->
+    <section class="environmental-factors">
+        <div class="container">
+            <div class="section-header">
+                <h2>CROP REQUIREMENTS</h2>
+                <h1>Understanding Environmental Factors</h1>
+            </div>
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <div class="factor-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h3>Temperature</h3>
+                    <p>Different crops require specific temperature ranges for optimal growth. Our AI analyzes historical temperature data to recommend crops suited to your local climate.</p>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3>Rainfall</h3>
+                    <p>Water requirements vary significantly between crops. Our system considers your region's rainfall patterns to suggest crops that will thrive with available water resources.</p>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Soil Composition</h3>
+                    <p>Soil type and nutrient content are crucial for crop success. Our AI analyzes your soil data to recommend crops that will flourish in your specific soil conditions.</p>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Sunlight</h3>
+                    <p>Some crops require full sun, while others thrive in partial shade. Our system factors in your location's sunlight patterns when making recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header">
+                <h2>CASE STUDIES</h2>
+                <h1>Farmer Success Stories</h1>
+            </div>
+            <div class="stories-slider">
+                <div class="story-slide">
+                    <div class="story-image">
+                        <img src="images/Contact_story.jpeg" alt="Farmer Success Story">
+                    </div>
+                    <div class="story-content">
+                        <div class="farmer-info">
+                            <div>
+                                <h3>John Williams</h3>
+                                <p>Wheat Farmer, Iowa</p>
+                            </div>
+                        </div>
+                        <p class="story-text">"After using CropTech's AI Crop Selection tool, I switched from corn to a specialized wheat variety that was better suited for my soil conditions. My yield increased by 35% in the first season, and I've been able to reduce my water usage significantly."</p>
+                        <div class="story-stats">
+                            <div class="stat">
+                                <h4>35%</h4>
+                                <p>Yield Increase</p>
+                            </div>
+                            <div class="stat">
+                                <h4>28%</h4>
+                                <p>Cost Reduction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More slides would be added and controlled by JavaScript -->
+            </div>
+            <div class="slider-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Find Your Ideal Crops?</h2>
+        <h3>Start optimizing your farm today</h3>
+        <a href="login.html" class="btn btn-cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="CropTech Logo">
+                <h2>CropTech</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Technology</h3>
+                    <ul>
+                        <li><a href="crop-monitoring.html">AI Crop Monitoring</a></li>
+                        <li><a href="crop-selection.html">AI Crop Selection</a></li>
+                        <li><a href="climate-prediction.html">AI Climate Prediction</a></li>
+                        <li><a href="market-prediction.html">AI Market Prediction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6cfc8c0c9e6c5d4c9d6d2c3c5ce88c5c9cb">[email&#160;protected]</a></p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CropTech. All rights reserved</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="main.js"></script>
+    <script src="crop-selection.js"></script>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="VtQ4-9f01p0w39EnyfHPP";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
+

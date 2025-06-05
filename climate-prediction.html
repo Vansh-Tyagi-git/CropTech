@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Climate Risk - CropTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="climate-prediction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="CropTech Logo">
+            <h1>CropTech</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Technology <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="crop-monitoring.html">AI Crop Monitoring</a>
+                        <a href="crop-selection.html">AI Crop Selection</a>
+                        <a href="climate-prediction.html" class="active">AI Climate Risk</a>
+                        <a href="market-prediction.html">AI Market Prediction</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta-button">
+            <a href="contact.html" class="btn">Contact Us →</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>AI Climate Risk Assessment</h1>
+                <p>Predict weather patterns and assess climate risks to protect your crops</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="climate-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>WEATHER INTELLIGENCE</h2>
+                <h1>Stay Ahead of Climate Challenges</h1>
+            </div>
+
+            <!-- Location Selection -->
+            <div class="location-selection">
+                <h3>Select Your Location</h3>
+                <div class="map-container">
+                    <div id="climate-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.627909522989!2d77.0335821798877!3d28.61093741296013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05dd375e5a13%3A0x108adaa3abe4bd07!2sNetaji%20Subhas%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1743535939981!5m2!1sen!2sin" width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="map-controls">
+                        <button class="btn" id="climate-locate-btn">
+                            <i class="fas fa-location-arrow"></i> Use Current Location
+                        </button>
+                        <div class="search-box">
+                            <input type="text" id="climate-location-search" placeholder="Search location...">
+                            <button class="btn" id="climate-search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Dashboard -->
+            <div class="weather-dashboard">
+                <div class="dashboard-header">
+                    <h3>Weather Dashboard</h3>
+                    <div class="dashboard-controls">
+                        <button class="tab-btn active" data-tab="current">Current Weather</button>
+                        <button class="tab-btn" data-tab="forecast">Forecast</button>
+                    </div>
+                </div>
+
+                <!-- Current Weather Tab -->
+                <div class="dashboard-tab active" id="current-tab">
+                    <div class="current-weather">
+                        <div class="weather-main">
+                            <div class="location-info">
+                                <h4 id="location-name">Loading location...</h4>
+                                <p id="current-date">--</p>
+                            </div>
+                            <div class="weather-info">
+                                <div class="weather-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="temperature">
+                                    <h2 id="current-temp">--°C</h2>
+                                    <p id="weather-desc">--</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="detail-item">
+                                <div class="icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="detail">
+                                    <p>Wind</p>
+                                    <h5 id="wind-speed">-- km/h</h5>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="detail">
+                                    <p>Humidity</p>
+                                    <h5 id="humidity">--%</h5>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="icon">
+                                    <i class="fas fa-cloud-rain"></i>
+                                </div>
+                                <div class="detail">
+                                    <p>Precipitation</p>
+                                    <h5 id="precipitation">-- mm</h5>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="detail">
+                                    <p>UV Index</p>
+                                    <h5 id="uv-index">--</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forecast Tab -->
+                <div class="dashboard-tab" id="forecast-tab">
+                    <div class="forecast-container">
+                        <div class="forecast-header">
+                            <h4>7-Day Forecast</h4>
+                        </div>
+                        <div class="forecast-items" id="forecast-items">
+                            <!-- Forecast items will be added here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Climate Risk Reports -->
+            <div class="reports-section">
+                <div class="section-header">
+                    <h3>Climate Risk Reports</h3>
+                </div>
+                <div class="reports-container">
+                    <div class="report-tabs">
+                        <button class="report-tab active" data-report="crops">Crops Survival</button>
+                        <button class="report-tab" data-report="actions">Required Actions</button>
+                    </div>
+                    
+                    <!-- Crops Survival Report -->
+                    <div class="report-content active" id="crops-report">
+                        <div class="crop-survival">
+                            <h4>Crop Survival Probability</h4>
+                            <div class="crop-list" id="crop-list">
+                                <!-- Crop items will be added here by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="risk-factors">
+                            <h4>Risk Factors</h4>
+                            <ul id="risk-factors-list">
+                                <!-- Risk factors will be added here by JavaScript -->
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Required Actions Report -->
+                    <div class="report-content" id="actions-report">
+                        <div class="action-items">
+                            <h4>Recommended Field Actions</h4>
+                            <div class="action-list" id="action-list">
+                                <!-- Action items will be added here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-controls">
+                    <button class="btn" id="generate-report-btn">Generate Detailed Report</button>
+                    <button class="btn btn-secondary" id="export-data-btn">Export Data</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Prepare for climate challenges with AI-powered insights</h2>
+        <h3>Protect your crops from unpredictable weather</h3>
+        <a href="login.html" class="btn btn-cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="CropTech Logo">
+                <h2>CropTech</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Technology</h3>
+                    <ul>
+                        <li><a href="crop-monitoring.html">AI Crop Monitoring</a></li>
+                        <li><a href="crop-selection.html">AI Crop Selection</a></li>
+                        <li><a href="climate-prediction.html">AI Climate Risk</a></li>
+                        <li><a href="market-prediction.html">AI Market Prediction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p>Email: info@croptech.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CropTech. All rights reserved</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initClimateMap" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="climate-prediction.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

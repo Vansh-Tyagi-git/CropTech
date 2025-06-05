@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Monitoring - CropTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="crop-monitoring.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="CropTech Logo">
+            <h1>CropTech</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Technology <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="crop-monitoring.html" class="active">AI Crop Monitoring</a>
+                        <a href="crop-selection.html">AI Crop Selection</a>
+                        <a href="climate-prediction.html">AI Climate Risk</a>
+                        <a href="market-prediction.html">AI Market Prediction</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta-button">
+            <a href="contact.html" class="btn">Contact Us →</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>AI Crop Monitoring</h1>
+                <p>Advanced monitoring solutions to keep your crops healthy and maximize yield</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="monitoring-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>REAL-TIME MONITORING</h2>
+                <h1>Monitor Your Crops with Precision</h1>
+            </div>
+
+            <!-- Location Selection -->
+            <div class="location-selection">
+                <h3>Select Monitoring Method</h3>
+                <div class="monitoring-options">
+                    <div class="monitoring-option" id="satellite-option">
+                        <div class="icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h4>Satellite</h4>
+                        <p>Monitor large areas with satellite imagery</p>
+                        <button class="btn-secondary" id="satellite-btn">Select</button>
+                    </div>
+                    <div class="monitoring-option" id="drone-option">
+                        <div class="icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <i class="fas fa-drone"></i>
+                        </div>
+                        <h4>Drone</h4>
+                        <p>Detailed monitoring with drone technology</p>
+                        <button class="btn-secondary" id="drone-btn">Select</button>
+                    </div>
+                    <div class="monitoring-option" id="mobile-option">
+                        <div class="icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile</h4>
+                        <p>Use your smartphone for on-the-go monitoring</p>
+                        <button class="btn-secondary" id="mobile-btn">Select</button>
+                    </div>
+                    <div class="monitoring-option" id="upload-option">
+                        <div class="icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h4>Upload Images</h4>
+                        <p>Upload your own images for analysis</p>
+                        <button class="btn-secondary" id="upload-btn">Select</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map View -->
+            <div class="map-container" id="map-view">
+                <h3>Field Location</h3>
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button class="btn" id="locate-btn">
+                        <i class="fas fa-location-arrow"></i> Use Current Location
+                    </button>
+                    <div class="search-box">
+                        <input type="text" id="location-search" placeholder="Search location...">
+                        <button class="btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section (initially hidden) -->
+            <div class="upload-container" id="upload-container">
+                <h3>Upload Field Images</h3>
+                <div class="upload-area" id="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop images here or click to browse</p>
+                    <input type="file" id="file-input" accept="image/*" multiple hidden>
+                </div>
+                <div class="uploaded-images" id="uploaded-images">
+                    <!-- Uploaded images will appear here -->
+                </div>
+                <button class="btn" id="analyze-btn">Analyze Images</button>
+            </div>
+
+            <!-- Analysis Results (initially hidden) -->
+            <div class="analysis-results" id="analysis-results">
+                <h3>Crop Analysis Results</h3>
+                <div class="results-container">
+                    <div class="result-card">
+                        <h4>Crop Health</h4>
+                        <div class="health-meter">
+                            <div class="meter-fill" id="health-meter"></div>
+                        </div>
+                        <p id="health-status">Good condition</p>
+                    </div>
+                    <div class="result-card">
+                        <h4>Pest Detection</h4>
+                        <div class="pest-status" id="pest-status">
+                            <p>No pests detected</p>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <h4>Growth Stage</h4>
+                        <div class="growth-stage" id="growth-stage">
+                            <p>Vegetative growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pest Action Plan (initially hidden) -->
+            <div class="action-plan" id="action-plan">
+                <h3>Recommended Actions</h3>
+                <div class="action-container">
+                    <div class="action-card">
+                        <div class="icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h4>Pest Management</h4>
+                        <ul id="pest-actions">
+                            <li>Apply organic pesticide to affected areas</li>
+                            <li>Introduce beneficial insects for natural control</li>
+                            <li>Implement crop rotation next season</li>
+                        </ul>
+                    </div>
+                    <div class="action-card">
+                        <div class="icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4>Crop Health</h4>
+                        <ul id="health-actions">
+                            <li>Adjust irrigation schedule</li>
+                            <li>Apply foliar fertilizer</li>
+                            <li>Monitor for signs of disease spread</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn" id="download-report-btn">Download Detailed Report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to optimize your crop management?</h2>
+        <h3>Try our advanced monitoring tools today!</h3>
+        <a href="login.html" class="btn btn-cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="CropTech Logo">
+                <h2>CropTech</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Technology</h3>
+                    <ul>
+                        <li><a href="crop-monitoring.html">AI Crop Monitoring</a></li>
+                        <li><a href="crop-selection.html">AI Crop Selection</a></li>
+                        <li><a href="climate-prediction.html">AI Climate Risk</a></li>
+                        <li><a href="market-prediction.html">AI Market Prediction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p>Email: info@croptech.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CropTech. All rights reserved</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>
+    <script src="crop-monitoring.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

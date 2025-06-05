@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Market Prediction - CropTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="market-prediction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="CropTech Logo">
+            <h1>CropTech</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Technology <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="crop-monitoring.html">AI Crop Monitoring</a>
+                        <a href="crop-selection.html">AI Crop Selection</a>
+                        <a href="climate-prediction.html">AI Climate Risk</a>
+                        <a href="market-prediction.html" class="active">AI Market Prediction</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta-button">
+            <a href="contact.html" class="btn">Contact Us →</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>AI Market Prediction</h1>
+                <p>Make informed decisions with real-time market insights and price forecasts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="market-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>MARKET INTELLIGENCE</h2>
+                <h1>Stay Ahead with Market Insights</h1>
+            </div>
+
+            <!-- Market Dashboard -->
+            <div class="market-dashboard">
+                <div class="dashboard-header">
+                    <h3>Market Overview</h3>
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="crop-filter">Crop Type:</label>
+                            <select id="crop-filter">
+                                <option value="all">All Crops</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="rice">Rice</option>
+                                <option value="corn">Corn</option>
+                                <option value="soybeans">Soybeans</option>
+                                <option value="cotton">Cotton</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="time-filter">Time Period:</label>
+                            <select id="time-filter">
+                                <option value="day">Today</option>
+                                <option value="week">This Week</option>
+                                <option value="month" selected>This Month</option>
+                                <option value="quarter">This Quarter</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+                        <button class="btn-secondary" id="refresh-btn">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Market Trends -->
+                <div class="market-trends">
+                    <div class="trend-cards">
+                        <div class="trend-card">
+                            <h4>Wheat</h4>
+                            <div class="price-info">
+                                <span class="current-price">$7.25</span>
+                                <span class="price-change up">
+                                    <i class="fas fa-arrow-up"></i> 2.3%
+                                </span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="wheat-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="trend-card">
+                            <h4>Rice</h4>
+                            <div class="price-info">
+                                <span class="current-price">$14.50</span>
+                                <span class="price-change down">
+                                    <i class="fas fa-arrow-down"></i> 1.2%
+                                </span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="rice-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="trend-card">
+                            <h4>Corn</h4>
+                            <div class="price-info">
+                                <span class="current-price">$5.80</span>
+                                <span class="price-change up">
+                                    <i class="fas fa-arrow-up"></i> 3.7%
+                                </span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="corn-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="trend-card">
+                            <h4>Soybeans</h4>
+                            <div class="price-info">
+                                <span class="current-price">$13.45</span>
+                                <span class="price-change up">
+                                    <i class="fas fa-arrow-up"></i> 0.8%
+                                </span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="soybeans-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Analysis -->
+                <div class="market-analysis">
+                    <div class="analysis-header">
+                        <h3>Market Analysis</h3>
+                        <div class="analysis-tabs">
+                            <button class="analysis-tab active" data-tab="price">Price Forecast</button>
+                            <button class="analysis-tab" data-tab="demand">Demand Trends</button>
+                            <button class="analysis-tab" data-tab="supply">Supply Chain</button>
+                        </div>
+                    </div>
+
+                    <!-- Price Forecast Tab -->
+                    <div class="analysis-content active" id="price-tab">
+                        <div class="forecast-chart-container">
+                            <canvas id="price-forecast-chart"></canvas>
+                        </div>
+                        <div class="forecast-insights">
+                            <h4>Price Forecast Insights</h4>
+                            <ul id="price-insights">
+                                <li><i class="fas fa-chart-line"></i> Wheat prices expected to rise by 5% in the next month due to reduced global supply.</li>
+                                <li><i class="fas fa-chart-line"></i> Rice prices likely to stabilize after recent fluctuations.</li>
+                                <li><i class="fas fa-chart-line"></i> Corn showing strong upward trend due to increased ethanol demand.</li>
+                                <li><i class="fas fa-chart-line"></i> Soybeans expected to maintain steady growth over the next quarter.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Demand Trends Tab -->
+                    <div class="analysis-content" id="demand-tab">
+                        <div class="demand-chart-container">
+                            <canvas id="demand-trends-chart"></canvas>
+                        </div>
+                        <div class="demand-insights">
+                            <h4>Demand Trend Insights</h4>
+                            <ul id="demand-insights">
+                                <li><i class="fas fa-users"></i> Growing demand for organic crops across all categories.</li>
+                                <li><i class="fas fa-globe-americas"></i> Export demand increasing for wheat and soybeans.</li>
+                                <li><i class="fas fa-industry"></i> Industrial demand for corn rising due to biofuel production.</li>
+                                <li><i class="fas fa-store"></i> Domestic consumption of rice remains stable with slight growth.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Supply Chain Tab -->
+                    <div class="analysis-content" id="supply-tab">
+                        <div class="supply-chart-container">
+                            <canvas id="supply-chain-chart"></canvas>
+                        </div>
+                        <div class="supply-insights">
+                            <h4>Supply Chain Insights</h4>
+                            <ul id="supply-insights">
+                                <li><i class="fas fa-truck"></i> Transportation costs expected to increase by 3% next quarter.</li>
+                                <li><i class="fas fa-warehouse"></i> Storage capacity utilization at 78% nationwide.</li>
+                                <li><i class="fas fa-ship"></i> Port congestion improving, reducing export delays.</li>
+                                <li><i class="fas fa-seedling"></i> Seed availability good for next planting season.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Recommendations -->
+                <div class="market-recommendations">
+                    <h3>AI-Powered Recommendations</h3>
+                    <div class="recommendation-cards">
+                        <div class="recommendation-card">
+                            <div class="icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h4>Optimal Selling Time</h4>
+                            <p>Based on historical data and current trends, the optimal time to sell your crops is <strong>2-3 weeks from now</strong>.</p>
+                        </div>
+                        <div class="recommendation-card">
+                            <div class="icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Price Negotiation</h4>
+                            <p>Current market conditions suggest a <strong>strong negotiating position</strong> for corn and wheat producers.</p>
+                        </div>
+                        <div class="recommendation-card">
+                            <div class="icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Crop Planning</h4>
+                            <p>For next season, consider <strong>increasing soybean acreage</strong> based on projected demand growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Make data-driven decisions for your farm business</h2>
+        <h3>Get personalized market insights today!</h3>
+        <a href="login.html" class="btn btn-cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="CropTech Logo">
+                <h2>CropTech</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Technology</h3>
+                    <ul>
+                        <li><a href="crop-monitoring.html">AI Crop Monitoring</a></li>
+                        <li><a href="crop-selection.html">AI Crop Selection</a></li>
+                        <li><a href="climate-prediction.html">AI Climate Risk</a></li>
+                        <li><a href="market-prediction.html">AI Market Prediction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p>Email: info@croptech.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CropTech. All rights reserved</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="market-prediction.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

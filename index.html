@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropTech - AI-Powered Smart Farming</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="overlay">
+        <div class="overlay-content">
+            <img src="images/logo.png" alt="CropTech Logo" class="logo-pulse">
+            <h2>CropTech</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <p>Loading AI-powered farming solutions...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="CropTech Logo">
+            <h1>CropTech</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Technology <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="crop-monitoring.html">AI Crop Monitoring</a>
+                        <a href="crop-selection.html">AI Crop Selection</a>
+                        <a href="climate-prediction.html">AI Climate Prediction</a>
+                        <a href="market-prediction.html">AI Market Prediction</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="cta-button">
+            <a href="contact.html" class="btn">Contact Us →</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Driving the Future of Agriculture</h1>
+                <p>Modernizing plantation operations with tech-driven solutions for a greener and more productive future</p>
+                <a href="#solutions" class="btn">Explore Solutions →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="section-header">
+            <h2>BENEFIT OF CROPTECH</h2>
+            <h1>What CropTech Solutions Are You Seeking?</h1>
+        </div>
+        <div class="solution-cards">
+            <div class="solution-card">
+                <div class="icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Smart Farming Technology</h3>
+                <p>IoT-enabled devices monitor crops and soil while real-time analytics support better decision making</p>
+            </div>
+            <div class="solution-card">
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Market Access and Insights</h3>
+                <p>Connect farmers to buyers through our marketplace and gain insights into crop demand and pricing trends</p>
+            </div>
+            <div class="solution-card">
+                <div class="icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Education and Training</h3>
+                <p>Resources and workshops to help farmers adopt modern farming methods and embrace sustainability and solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-us">
+        <div class="join-cards">
+            <a href="crop-selection.html">
+                <div class="join-card">
+                    <img src="images/Ai-Crop-Selection.jpeg" alt="Farmer working in field">
+                    <div class="join-overlay">
+                        <h3>Optimize yield with AI-driven crop recommendations.</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="crop-monitoring.html">
+                <div class="join-card">
+                    <img src="images/Ai-Crop-Monitoring.jpg" alt="Farmer working in field">
+                    <div class="join-overlay">
+                        <h3>Real-time crop health tracking with AI-powered insights.</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="climate-prediction.html">
+                <div class="join-card">
+                    <img src="images/Ai-climate-Risk.jpg" alt="Farmer working in field">
+                    <div class="join-overlay">
+                        <h3>Predict and mitigate climate risks for sustainable farming.</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="market-prediction.html">
+                <div class="join-card">
+                    <img src="images/Ai-market-prediction.jpg" alt="Farmer working in field">
+                    <div class="join-overlay">
+                        <h3>AI-powered market trends to maximize your profits.</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Unlock Your Farming Potential.</h2>
+        <h3>Begin Your Journey Now!</h3>
+        <a href="login.html" class="btn btn-cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="CropTech Logo">
+                <h2>CropTech</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Technology</h3>
+                    <ul>
+                        <li><a href="crop-monitoring.html">AI Crop Monitoring</a></li>
+                        <li><a href="crop-selection.html">AI Crop Selection</a></li>
+                        <li><a href="climate-prediction.html">AI Climate Prediction</a></li>
+                        <li><a href="market-prediction.html">AI Market Prediction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p>Email: info@croptech.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CropTech. All rights reserved</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="charts.js"></script>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="VtQ4-9f01p0w39EnyfHPP";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+        </script>
+</body>
+</html>
